@@ -18,9 +18,13 @@ PULP_ARCH_LDFLAGS ?=  -march=rv32imcxgap9
 PULP_ARCH_OBJDFLAGS ?= -Mmarch=rv32imcxgap9
 endif
 
+ifndef LINKER_SCRIPT
+LINKER_SCRIPT = chips/pulp_cluster/link.ld
+endif
+
 PULP_CFLAGS    += -fdata-sections -ffunction-sections -include chips/pulp_cluster/config.h -I$(PULPRT_HOME)/include/chips/pulp_cluster
 PULP_OMP_CFLAGS    += -fopenmp -mnativeomp
-PULP_LDFLAGS += -nostartfiles -nostdlib -Wl,--gc-sections -L$(PULPRT_HOME)/kernel -Tchips/pulp_cluster/link.ld -lgcc
+PULP_LDFLAGS += -nostartfiles -nostdlib -Wl,--gc-sections -L$(PULPRT_HOME)/kernel -T$(LINKER_SCRIPT) -lgcc
 
 PULP_CC = riscv32-unknown-elf-gcc 
 PULP_AR ?= riscv32-unknown-elf-ar
