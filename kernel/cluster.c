@@ -81,6 +81,7 @@ void cluster_start(int cid, int (*entry)())
 
     // Activate icache
     hal_icache_cluster_enable(cid);
+    hal_icache_cluster_enable_l1_l15_prefetch(cid);
 
     #ifndef ARCHI_NO_FC
     if (!hal_is_fc())

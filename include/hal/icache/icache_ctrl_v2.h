@@ -36,6 +36,12 @@ static inline void hal_icache_cluster_enable(int cid)
   pulp_write32(ARCHI_CLUSTER_PERIPHERALS_GLOBAL_ADDR(cid) + ARCHI_ICACHE_CTRL_OFFSET, 0xFFFFFFFF);
 }
 
+static inline void hal_icache_cluster_enable_l1_l15_prefetch(int cid)
+{
+  // See "ENABLE_L1_L15_PREFETCH" in hier_icache_ctrl_unit.sv
+  pulp_write32(ARCHI_CLUSTER_PERIPHERALS_GLOBAL_ADDR(cid) + ARCHI_ICACHE_CTRL_OFFSET + 0b00011100, 0xFFFFFFFF);
+}
+
 static inline void icache_enable(unsigned int base)
 {
   pulp_write32(base, 0xFFFFFFFF);
