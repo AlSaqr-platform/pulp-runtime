@@ -3,8 +3,8 @@ OUTPUT_ARCH(riscv)
 ENTRY( _start )
 MEMORY
 {
-  L2           : ORIGIN = 0x1c000000, LENGTH = 0x0007fffc
-  L1           : ORIGIN = 0x10000000, LENGTH = 0x0000fffc
+  L2           : ORIGIN = 0x1c000004, LENGTH = 0x0000fff8
+  L1           : ORIGIN = 0x10000004, LENGTH = 0x0003fff8
 }
 
 /*
@@ -178,7 +178,7 @@ SECTIONS
    * Contains FC code
    */
 
-  .vectors MAX(0x1c008000,ALIGN(256)) :
+  .vectors MAX(0x1c002000,ALIGN(256)) :
   {
     __irq_vector_base = .;
     KEEP(*(.vectors))
@@ -206,7 +206,7 @@ SECTIONS
    * Contains other data such as peripheral data and cluster code and data
    */
 
-  .l2_data MAX(0x1c010000,ALIGN(4)) :
+  .l2_data MAX(0x1c004000,ALIGN(4)) :
   {
     . = ALIGN(4);
     __cluster_text_start = .;
