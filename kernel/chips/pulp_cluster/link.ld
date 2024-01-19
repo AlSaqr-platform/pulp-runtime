@@ -3,12 +3,12 @@ OUTPUT_ARCH(riscv)
 ENTRY( _start )
 MEMORY
 {
-  L2           : ORIGIN = 0x1c000100, LENGTH = 0x0000ff00
+  L2           : ORIGIN = 0x1c000100, LENGTH = 0x00007f00
   L1           : ORIGIN = 0x10000004, LENGTH = 0x0003fff8
 }
 
 /*
- * This linker script try to put FC data in L2 private bank0 and FC code 
+ * This linker script try to put FC data in L2 private bank0 and FC code
  * in L2 private bank1 to avoid contention between FC code and data
  * as FC has no instruction cache and is so often accessing L2 to
  * get instructions. Everything can be shifted in case one bank is full.
