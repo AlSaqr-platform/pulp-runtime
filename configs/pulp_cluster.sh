@@ -13,4 +13,13 @@ else
 
 fi
 
+# Absolute path to the checked-out SDK
+export PULP_SDK_DIR=$(pwd)/../third_party/pulp-sdk
+export PMSIS_DIR=$PULP_SDK_DIR/rtos/pmsis
+export HAL_DIR=$PULP_SDK_DIR/rtos/hal
+export ARCHI_DIR=$PULP_SDK_DIR/rtos/archi
+
+# PULP chip or board you are targeting, e.g. pulpissimo, hero, gap9 …
+export PMSIS_BOARD=pulp
+
 source $scriptDir/common.sh

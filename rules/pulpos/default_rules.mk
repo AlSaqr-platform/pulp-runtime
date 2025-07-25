@@ -13,6 +13,7 @@ VSIM ?= vsim
 
 
 ifdef PULP_RUNTIME_GCC_TOOLCHAIN
+
 PULP_CC := $(PULP_RUNTIME_GCC_TOOLCHAIN)/bin/$(PULP_CC)
 PULP_LD := $(PULP_RUNTIME_GCC_TOOLCHAIN)/bin/$(PULP_LD)
 else
@@ -37,14 +38,15 @@ endif
 endif
 
 VPATH = $(PULPRT_HOME)
-
+PULP_SDK_HOME = $(PULPRT_HOME)/pulp_sdk
+PMSIS_API = $(PULP_SDK_HOME)/rtos/pmsis/pmsis_api
 include $(PULPRT_HOME)/rules/pulpos/src.mk
 
 PULP_CFLAGS += $(PULPRT_CONFIG_CFLAGS)
 PULP_CFLAGS += -fno-jump-tables -fno-tree-loop-distribute-patterns
 
 ifeq '$(CONFIG_LIBC_MINIMAL)' '1'
-PULP_APP_CFLAGS += -I$(PULPRT_HOME)/lib/libc/minimal/include
+PULP_APP_CFLAGS += -I$(PULPRT_HOME)/lib/libc/minimal/include -I$(PMSIS_API)/include
 endif
 PULP_APP_CFLAGS += -I$(PULPRT_HOME)/include -I$(PULPRT_HOME)/kernel
 

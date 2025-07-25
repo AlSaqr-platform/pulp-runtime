@@ -23,9 +23,5 @@ unsigned int pos_fll_init(int fll);
 
 void pos_fll_constructor();
 
-static inline uint32_t pi_freq_get(pi_freq_domain_e domain)
-{
-    return pos_freq_domains[pos_freq_get_fll(domain)];
-}
 
 #endif

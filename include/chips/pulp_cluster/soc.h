@@ -22,7 +22,7 @@
 #define POS_FLL_PERIPH 1
 #define POS_FLL_FC 0
 
-extern int pos_freq_domains[PI_FREQ_NB_DOMAINS];
+extern int pos_freq_domains[3];
 
 
 void pos_soc_init();
@@ -31,13 +31,13 @@ static inline int pos_freq_get_fll(int domain)
 {
     switch (domain)
     {
-        case PI_FREQ_DOMAIN_FC:
+        case 0:
             return POS_FLL_FC;
 
-        case PI_FREQ_DOMAIN_PERIPH:
+        case 2:
             return POS_FLL_PERIPH;
 
-        case PI_FREQ_DOMAIN_CL:
+        case 1:
         default:
             return POS_FLL_CL;
     }

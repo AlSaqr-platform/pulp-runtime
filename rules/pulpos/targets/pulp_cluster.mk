@@ -58,7 +58,6 @@ PULP_SRCS     += kernel/fll-v$(fll/version).c
 PULP_SRCS     += kernel/freq-domains.c
 PULP_SRCS     += kernel/chips/pulp_cluster/soc.c
 
-
 include $(PULPRT_HOME)/rules/pulpos/configs/default.mk
 
 ifeq '$(platform)' 'fpga'

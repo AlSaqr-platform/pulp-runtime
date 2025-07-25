@@ -58,7 +58,6 @@ void pos_init_start()
   hal_pmu_bypass_set (ARCHI_REG_FIELD_SET (hal_pmu_bypass_get (), 1, 11, 1) );
 #endif
 
-  pos_soc_init();
 
   pos_irq_init();
 

@@ -18,23 +18,3 @@
 #include <pulp.h>
 
 
-int pos_freq_domains[PI_FREQ_NB_DOMAINS];
-
-
-
-int pos_freq_set_and_get(pi_freq_domain_e domain, unsigned int freq, unsigned int *out_freq)
-{
-    int irq = hal_irq_disable();
-
-    int fll_freq = pos_fll_set_freq(pos_freq_get_fll(domain), freq);
-    if (out_freq)
-      *out_freq = fll_freq;
-
-    pos_freq_domains[domain] = freq;
-
-    hal_irq_restore(irq);
-
-    return 0;
-}
-
-

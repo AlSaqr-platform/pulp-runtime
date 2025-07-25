@@ -14,16 +14,5 @@
  * limitations under the License.
  */
 
-#include "pulp.h"
 
-void pos_soc_init()
-{
-
-  pos_freq_domains[PI_FREQ_DOMAIN_FC] = ARCHI_FPGA_SOC_FREQUENCY;
-
-  pos_freq_domains[PI_FREQ_DOMAIN_PERIPH] = ARCHI_FPGA_PER_FREQUENCY;
-
-  pos_freq_domains[PI_FREQ_DOMAIN_CL] = ARCHI_FPGA_CL_FREQUENCY;
-
-}
 
