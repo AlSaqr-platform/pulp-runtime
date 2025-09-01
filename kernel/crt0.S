@@ -30,7 +30,7 @@ pos_init_entry:
     # PEs from 1 to 7 will go to sync_loop and wait. PE0 will reach them
     # later after the pos_init_start. Then, they'll set up their stack into
     # the L1 and jump to cluster_entry_stub
-    li t0, 0x10000000
+    li t0, 0xB0000000
     sw x0, 0(t0)
     bnez    a0,  sync_loop
 #else   
@@ -76,7 +76,7 @@ pos_init_entry:
 #ifdef ARCHI_NO_FC
     csrr    a0, 0xF14
     andi    a1, a0, 0x1f
-    li t0, 0x10000000
+    li t0, 0xB0000000
     li t1, 0x1
     sw t1, 0(t0)
     j pe_start
