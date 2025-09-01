@@ -3,7 +3,7 @@ OUTPUT_ARCH(riscv)
 ENTRY( _start )
 MEMORY
 {
-  L2           : ORIGIN = 0xA0000100, LENGTH = 0x0007f000
+  L2           : ORIGIN = 0x1C000100, LENGTH = 0x00007f00
   L1           : ORIGIN = 0xB0000004, LENGTH = 0x0007fff8
 }
 
