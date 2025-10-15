@@ -27,7 +27,7 @@ SECTIONS
    * Contains FC data
    */
 
-  .vectors MAX(0xA0000000,ALIGN(256)) :
+  .vectors MAX(0x1C000000,ALIGN(256)) :
   {
     __irq_vector_base = .;
     KEEP(*(.vectors))
