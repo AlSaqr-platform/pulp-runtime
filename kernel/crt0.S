@@ -92,7 +92,7 @@ pos_init_entry:
     # Jump to main program entry point (argc = a0, argv = a1).
     la    t2, main
     jalr  x1, t2
-    sw    t1, 0(t0)
+    mv    s0, a0
 
     /* Do all other deinitializations from C code */
     jal  x1, pos_init_stop
