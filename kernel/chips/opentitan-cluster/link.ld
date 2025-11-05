@@ -4,11 +4,11 @@ ENTRY( _start )
 MEMORY
 {
   L2           : ORIGIN = 0x1c000000, LENGTH = 0x0007fffc
-  L1           : ORIGIN = 0x10000000, LENGTH = 0x0000fffc
+  L1           : ORIGIN = 0xB0000000, LENGTH = 0x0000fffc
 }
 
 /*
- * This linker script try to put FC data in L2 private bank0 and FC code 
+ * This linker script try to put FC data in L2 private bank0 and FC code
  * in L2 private bank1 to avoid contention between FC code and data
  * as FC has no instruction cache and is so often accessing L2 to
  * get instructions. Everything can be shifted in case one bank is full.
