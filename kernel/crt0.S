@@ -35,14 +35,14 @@ pos_init_entry:
 #elif PULP_CHIP == CHIP_ASTRAL
     li t0, 0x5003FFF0
 #else
-    li t0, 0x1003FFF0
+    li t0, 0xB0000000
 #endif
     sw x0, 0(t0)
     # We check if the offset of the core is zero, so that even if the cluster
     # ID is not zero, the execution does not break here
     andi    a2, a0, 0x0f
     bnez    a2, sync_loop
-#else   
+#else
     srli    a0, a0, 5
 #ifdef ARCHI_CL_BOOT
 
@@ -90,7 +90,7 @@ pos_init_entry:
 #elif PULP_CHIP == CHIP_ASTRAL
     li t0, 0x5003FFF0
 #else
-    li t0, 0x1003FFF0
+    li t0, 0xB0000000
 #endif
     li t1, 0x1
     sw t1, 0(t0)
