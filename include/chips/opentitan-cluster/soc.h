@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef __CONTROL_PULP_SOC_H__
-#define __CONTROL_PULP_SOC_H__
+#ifndef __POS_CHIPS_PULP_SOC_H__
+#define __POS_CHIPS_PULP_SOC_H__
 
 
-/* TODO we should remove the fll code for opentitan-cluster */
 #define POS_FLL_CL 2
 #define POS_FLL_PERIPH 1
 #define POS_FLL_FC 0
@@ -43,5 +42,6 @@ static inline int pos_freq_get_fll(int domain)
             return POS_FLL_CL;
     }
 }
+
 
 #endif

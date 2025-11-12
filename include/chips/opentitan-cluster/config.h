@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef __CONTROL_PULP_CONFIG_H__
-#define __CONTROL_PULP_CONFIG_H__
+#ifndef __POS__CHIPS__PULP__CONFIG_H__
+#define __POS__CHIPS__PULP__CONFIG_H__
 
 #include "archi/pulp_defs.h"
 
-#define PULP_CHIP CHIP_CONTROL_PULP
-#define PULP_CHIP_FAMILY CHIP_CONTROL_PULP
+#define PULP_CHIP CHIP_PULP
+#define PULP_CHIP_FAMILY CHIP_PULP
 #define CONFIG_PULP 1
 #define PULP_CHIP_STR opentitan-cluster
 #define PULP_CHIP_FAMILY_STR opentitan-cluster

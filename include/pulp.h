@@ -99,6 +99,14 @@ void uart_close(int uart_id);
 int uart_write(int uart_id, void *buffer, uint32_t size);
 int uart_read(int uart_id, void *buffer, uint32_t size);
 #endif
+#if defined(CONFIG_IO_UART) && CONFIG_IO_UART == 2
+int uart_read_ready(void *uart_base);
+void uart_write(void *uart_base, uint8_t byte);
+void uart_write_str(void *uart_base, void *src, uint64_t len);
+void uart_write_flush(void *uart_base);
+uint8_t uart_read(void *uart_base);
+void uart_read_str(void *uart_base, void *dst, uint64_t len);
+#endif
 
 void synch_barrier();
 
