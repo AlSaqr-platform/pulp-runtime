@@ -108,12 +108,12 @@ void pi_l1_free(int cid, void *chunk, int size)
 
 void *pi_l2_malloc(int size)
 {
-    return pos_alloc(&pos_alloc_l2[0], size);
+    return pos_alloc(&pos_alloc_l2[2], size);
 }
 
 void pi_l2_free(void *_chunk, int size)
 {
-    return pos_free(&pos_alloc_l2[0], _chunk, size);
+    return pos_free(&pos_alloc_l2[2], _chunk, size);
 }
 
 #if defined(ARCHI_HAS_FC_TCDM)
